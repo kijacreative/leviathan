@@ -1,0 +1,10 @@
+/* ============================================================
+   Leviathan AI Systems — Design System entry point.
+   Consumers link THIS file only. Imports must reach every
+   token + @font-face file. No rules live here directly.
+   ============================================================ */
+@import url('./tokens/fonts.css');
+@import url('./tokens/colors.css');
+@import url('./tokens/typography.css');
+@import url('./tokens/spacing.css');
+@import url('./tokens/effects.css');

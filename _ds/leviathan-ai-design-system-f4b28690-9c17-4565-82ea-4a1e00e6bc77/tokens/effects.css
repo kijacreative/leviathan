@@ -1,0 +1,46 @@
+/* ============================================================
+   Leviathan AI Systems — Effects: shadows, glow, blur, motion
+   Shadows are deep and cool. Light reads as bioluminescent rim
+   and glow rather than warm highlights. Glass uses backdrop blur.
+   ============================================================ */
+:root {
+  /* ---- Elevation shadows (cool, deep) ---- */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.45);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.40);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.48);
+  --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.55);
+  --shadow-xl: 0 28px 80px rgba(0, 0, 0, 0.60);
+
+  /* ---- Rim light / inner highlight (metallic edge) ---- */
+  --rim-top: inset 0 1px 0 rgba(169, 220, 242, 0.14); /* @kind shadow */
+  --rim-edge: inset 0 0 0 1px rgba(129, 195, 224, 0.10); /* @kind shadow */
+
+  /* ---- Bioluminescent glow ---- */
+  --glow-sm: 0 0 12px rgba(79, 184, 232, 0.28);
+  --glow-md: 0 0 24px rgba(79, 184, 232, 0.35);
+  --glow-lg: 0 0 48px rgba(79, 184, 232, 0.40);
+  --glow-accent: 0 0 0 1px rgba(44, 107, 179, 0.6), 0 0 20px rgba(44, 107, 179, 0.45);
+
+  /* ---- Blur ---- */
+  --blur-sm: 8px; /* @kind other */
+  --blur-md: 14px; /* @kind other */
+  --blur-lg: 24px; /* @kind other */
+
+  /* ---- Focus ring ---- */
+  --ring: 0 0 0 3px var(--focus-ring); /* @kind shadow */
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --ease-deep: cubic-bezier(0.22, 1, 0.36, 1); /* @kind other */
+  --dur-fast: 120ms; /* @kind other */
+  --dur-base: 220ms; /* @kind other */
+  --dur-slow: 420ms; /* @kind other */
+
+  /* ---- Signature gradients ---- */
+  --grad-abyss: linear-gradient(180deg, #04101f 0%, #02060c 100%); /* @kind color */
+  --grad-depth: radial-gradient(120% 90% at 50% -10%, #14315c 0%, #07182c 45%, #02060c 100%); /* @kind color */
+  --grad-rays: linear-gradient(170deg, rgba(129,195,224,0.10) 0%, rgba(129,195,224,0) 55%); /* @kind color */
+  --grad-chrome: linear-gradient(135deg, #dce8f5 0%, #81c3e0 35%, #2c6bb3 70%, #163a6e 100%); /* @kind color */
+  --grad-cta: linear-gradient(180deg, #2c6bb3 0%, #1e4c8a 100%); /* @kind color */
+}

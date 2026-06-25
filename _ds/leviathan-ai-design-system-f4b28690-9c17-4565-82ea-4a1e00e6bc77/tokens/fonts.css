@@ -1,0 +1,15 @@
+/* ============================================================
+   Leviathan AI Systems — Webfonts
+   Display : Jura          (geometric, futuristic — headline match)
+   Body    : Hanken Grotesk (neutral precision workhorse)
+   Mono    : JetBrains Mono (data / technical readouts)
+   NOTE: loaded from Google Fonts CDN. Jura is a best-guess match
+   for the site's headline face — see readme for substitution flag.
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600;700&family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --font-display: 'Jura', system-ui, -apple-system, sans-serif;
+  --font-body: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+}

@@ -1,0 +1,45 @@
+/* ============================================================
+   Leviathan AI Systems — Spacing, Radii, Sizing
+   4px base grid. Restrained, precise radii — the brand is
+   engineered and sharp, not soft.
+   ============================================================ */
+:root {
+  /* ---- Spacing (4px grid) ---- */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* ---- Border radii (sharp / engineered) ---- */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 16px;
+  --radius-pill: 999px;
+
+  /* ---- Border widths ---- */
+  --border-hairline: 1px;
+  --border-thick: 2px;
+
+  /* ---- Container widths ---- */
+  --container-sm: 640px;
+  --container-md: 960px;
+  --container-lg: 1200px;
+  --container-xl: 1440px;
+
+  /* ---- Control heights ---- */
+  --control-sm: 32px;
+  --control-md: 40px;
+  --control-lg: 48px;
+}

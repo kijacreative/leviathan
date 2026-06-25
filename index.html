@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Leviathan AI Systems — Enterprise AI Infrastructure</title>
+
+<link rel="stylesheet" href="_ds/leviathan-ai-design-system-f4b28690-9c17-4565-82ea-4a1e00e6bc77/tokens/fonts.css" />
+<link rel="stylesheet" href="_ds/leviathan-ai-design-system-f4b28690-9c17-4565-82ea-4a1e00e6bc77/tokens/colors.css" />
+<link rel="stylesheet" href="_ds/leviathan-ai-design-system-f4b28690-9c17-4565-82ea-4a1e00e6bc77/tokens/typography.css" />
+<link rel="stylesheet" href="_ds/leviathan-ai-design-system-f4b28690-9c17-4565-82ea-4a1e00e6bc77/tokens/spacing.css" />
+<link rel="stylesheet" href="_ds/leviathan-ai-design-system-f4b28690-9c17-4565-82ea-4a1e00e6bc77/tokens/effects.css" />
+<link rel="stylesheet" href="_ds/leviathan-ai-design-system-f4b28690-9c17-4565-82ea-4a1e00e6bc77/styles.css" />
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="_ds/leviathan-ai-design-system-f4b28690-9c17-4565-82ea-4a1e00e6bc77/_ds_bundle.js"></script>
+
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #02060c; color: var(--text-primary); font-family: var(--font-body); }
+  a { color: inherit; }
+  ::selection { background: rgba(79,184,232,0.28); }
+
+  /* ---- Atmosphere ---- */
+  @keyframes lev-ray { from { opacity: 0.5; } to { opacity: 1; } }
+  @keyframes lev-drift { 0% { transform: translateY(40px); opacity: 0; } 12% { opacity: var(--o,.3); } 88% { opacity: var(--o,.3); } 100% { transform: translateY(-160px); opacity: 0; } }
+  @keyframes lev-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @keyframes lev-fade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes lev-rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes lev-pulse { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+
+  /* scroll-reveal — content is ALWAYS visible (opacity:1); only a transform
+     slides it in, so a throttled/exported frame never hides content. */
+  .reveal { opacity: 1; }
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal.in { animation: lev-reveal .65s var(--ease-deep) both; }
+  }
+  @keyframes lev-reveal { from { transform: translateY(24px); } to { transform: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<div id="top"></div>
+<div id="root"></div>
+
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+    <defs>
+      <radialGradient id="g" cx="50%" cy="0%" r="120%">
+        <stop offset="0%" stop-color="#14315c"/><stop offset="50%" stop-color="#07182c"/><stop offset="100%" stop-color="#02060c"/>
+      </radialGradient>
+    </defs>
+    <rect width="400" height="300" fill="url(#g)"/>
+    <text x="200" y="160" font-family="Jura, sans-serif" font-size="68" font-weight="600" letter-spacing="6" fill="#81c3e0" text-anchor="middle">L</text>
+    <text x="200" y="205" font-family="monospace" font-size="13" letter-spacing="5" fill="#a8c0d6" text-anchor="middle">LEVIATHAN AI</text>
+  </svg>
+</template>
+
+<script type="text/babel" src="site.jsx"></script>
+</body>
+</html>

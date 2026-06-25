@@ -1,0 +1,86 @@
+/* ============================================================
+   Leviathan AI Systems — Color System
+   "A deep-sea intelligence that became a technology company."
+   Abyssal darks, commanding ocean blues, bioluminescent glow,
+   metallic chrome highlights drawn from the logo.
+   ============================================================ */
+:root {
+  /* ---- Abyssal darks (backgrounds) ---- */
+  --ink:        #000000; /* header bar, deepest black */
+  --abyss-900:  #02060c; /* app base background */
+  --abyss-800:  #04101f; /* deep ocean */
+  --abyss-700:  #07182c; /* elevated surface */
+  --abyss-600:  #0a2138; /* raised card */
+  --abyss-500:  #0e2c49;
+
+  /* ---- Ocean blues (mid depth) ---- */
+  --ocean-600:  #103a6e;
+  --ocean-500:  #133271; /* hero mid-water */
+  --ocean-400:  #1c477f;
+
+  /* ---- Leviathan blue (primary brand) ---- */
+  --leviathan-700: #163a6e;
+  --leviathan-600: #1e4c8a; /* deep CTA fill */
+  --leviathan-500: #2c6bb3; /* PRIMARY accent */
+  --leviathan-400: #3f86cf;
+  --leviathan-300: #6aa6e0;
+
+  /* ---- Bioluminescence + chrome (highlights / glow) ---- */
+  --biolume-500: #2fa6e0;
+  --biolume-400: #4fb8e8;
+  --biolume-300: #81c3e0; /* logo highlight cyan-blue */
+  --biolume-200: #a9dcf2;
+  --chrome-300:  #c7d6e5; /* metallic silver-blue */
+  --chrome-200:  #dce8f5;
+  --chrome-100:  #eaf2fb;
+
+  /* ---- Cool steel neutrals ---- */
+  --steel-800:  #1a2336;
+  --steel-700:  #2f3855;
+  --steel-600:  #384d72; /* footer band */
+  --steel-500:  #56677d;
+  --steel-400:  #7b8da3;
+  --steel-300:  #a8c0d6;
+  --steel-200:  #c9d6e3;
+
+  /* ---- Status (cool-shifted) ---- */
+  --status-success: #3fb98a;
+  --status-warning: #d9a441;
+  --status-danger:  #e0564f;
+  --status-info:    var(--biolume-400);
+
+  /* ============ SEMANTIC ALIASES ============ */
+  /* Surfaces */
+  --bg-base:        var(--abyss-900);
+  --bg-deepest:     var(--ink);
+  --bg-elevated:    var(--abyss-700);
+  --bg-raised:      var(--abyss-600);
+  --surface-card:        rgba(10, 33, 56, 0.55);
+  --surface-card-solid:  #0a1e36;
+  --surface-glass:       rgba(8, 24, 44, 0.45);
+  --surface-overlay:     rgba(2, 6, 12, 0.72);
+
+  /* Borders / hairlines (bioluminescent rim light) */
+  --border-subtle:  rgba(129, 195, 224, 0.10);
+  --border-default: rgba(129, 195, 224, 0.20);
+  --border-strong:  rgba(129, 195, 224, 0.38);
+  --border-accent:  var(--leviathan-500);
+
+  /* Text */
+  --text-primary:   #eaf2fb;
+  --text-secondary: #a8c0d6;
+  --text-muted:     #7b8da3;
+  --text-faint:     #56677d;
+  --text-inverse:   #02060c;
+  --text-accent:    var(--biolume-300);
+  --text-link:      var(--leviathan-300);
+
+  /* Interaction */
+  --accent:        var(--leviathan-500);
+  --accent-hover:  var(--leviathan-400);
+  --accent-press:  var(--leviathan-600);
+  --accent-soft:   rgba(44, 107, 179, 0.16);
+  --glow:          var(--biolume-300);
+  --glow-soft:     rgba(79, 184, 232, 0.30);
+  --focus-ring:    rgba(79, 184, 232, 0.55);
+}
