@@ -230,8 +230,12 @@ function PlatformSection() {
       <div style={{ display: "grid", gridTemplateColumns: cols, gap: isMobile ? 12 : 20, marginTop: 48 }}>
         {items.map((it, i) => (
           <Reveal key={it.img} delay={i * 80}>
-            <Card variant="solid" padding="none" interactive style={{ overflow: "hidden", aspectRatio: "283 / 410" }}>
+            <Card variant="solid" padding="none" interactive style={{ overflow: "hidden", aspectRatio: "283 / 410", position: "relative" }}>
               <img src={`assets/products/${it.img}.png`} alt={it.name} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "48px 20px 20px", background: "linear-gradient(to top, rgba(2,6,12,0.92) 0%, rgba(2,6,12,0.5) 60%, transparent 100%)" }}>
+                <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--text-accent)", marginBottom: 6 }}>{it.name}</div>
+                <div style={{ fontSize: 13, lineHeight: 1.5, color: "var(--text-secondary)" }}>{it.desc}</div>
+              </div>
             </Card>
           </Reveal>
         ))}
@@ -376,8 +380,12 @@ function TechSection() {
       <div style={{ display: "grid", gridTemplateColumns: cols, gap: isMobile ? 14 : 20, marginTop: 48 }}>
         {items.map((it, i) => (
           <Reveal key={it.img} delay={i * 100}>
-            <Card variant="solid" padding="none" interactive style={{ overflow: "hidden", aspectRatio: isMobile ? "4 / 3" : "390 / 344" }}>
+            <Card variant="solid" padding="none" interactive style={{ overflow: "hidden", aspectRatio: isMobile ? "4 / 3" : "390 / 344", position: "relative" }}>
               <img src={`assets/products/${it.img}.png`} alt={it.name} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "48px 20px 20px", background: "linear-gradient(to top, rgba(2,6,12,0.92) 0%, rgba(2,6,12,0.5) 60%, transparent 100%)" }}>
+                <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--text-accent)", marginBottom: 6 }}>{it.name}</div>
+                <div style={{ fontSize: 13, lineHeight: 1.5, color: "var(--text-secondary)" }}>{it.desc}</div>
+              </div>
             </Card>
           </Reveal>
         ))}
