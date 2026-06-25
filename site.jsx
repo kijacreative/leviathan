@@ -219,10 +219,10 @@ function PlatformSection() {
   const { isMobile, isTablet } = useBreakpoint();
   const cols = isMobile ? "repeat(2, 1fr)" : isTablet ? "repeat(2, 1fr)" : "repeat(4, 1fr)";
   const items = [
-    { img: "intake", name: "Leviathan Intake AI", desc: "Automate legal intake & case evaluation" },
-    { img: "litigation", name: "Leviathan Litigation Engine", desc: "AI-powered litigation intelligence" },
-    { img: "analytics", name: "Leviathan Analytics", desc: "Advanced data & risk analytics" },
-    { img: "vendor", name: "Leviathan Vendor Network", desc: "Optimize vendor management & compliance" },
+    { img: "intake", icon: "inbox", name: "Intake AI", desc: "Automate legal intake & case evaluation" },
+    { img: "litigation", icon: "scale", name: "Litigation Engine", desc: "AI-powered litigation intelligence" },
+    { img: "analytics", icon: "bar-chart-2", name: "Analytics", desc: "Advanced data & risk analytics" },
+    { img: "vendor", icon: "network", name: "Vendor Network", desc: "Optimize vendor management & compliance" },
   ];
   return (
     <section id="platform" style={{ position: "relative", zIndex: 1, padding: isMobile ? "80px 20px 60px" : "100px 40px 70px", maxWidth: MAXW, margin: "0 auto" }}>
@@ -232,9 +232,10 @@ function PlatformSection() {
           <Reveal key={it.img} delay={i * 80}>
             <Card variant="solid" padding="none" interactive style={{ overflow: "hidden", aspectRatio: "283 / 410", position: "relative" }}>
               <img src={`assets/products/${it.img}.png`} alt={it.name} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "48px 20px 20px", background: "linear-gradient(to top, rgba(2,6,12,0.92) 0%, rgba(2,6,12,0.5) 60%, transparent 100%)" }}>
-                <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--text-accent)", marginBottom: 6 }}>{it.name}</div>
-                <div style={{ fontSize: 13, lineHeight: 1.5, color: "var(--text-secondary)" }}>{it.desc}</div>
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(2,6,12,0.88) 0%, rgba(2,6,12,0.3) 50%, rgba(2,6,12,0.15) 100%)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "20px 16px", gap: 14 }}>
+                <div style={{ color: "var(--text-accent)", opacity: 0.85 }}>{Ic(it.icon, { width: 32, height: 32, strokeWidth: 1.4 })}</div>
+                <div style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: isMobile ? 16 : 20, letterSpacing: "0.03em", lineHeight: 1.2, color: "var(--text-primary)", textAlign: "center" }}>{it.name}</div>
+                <div style={{ fontSize: 12, lineHeight: 1.5, color: "var(--text-secondary)", textAlign: "center", opacity: 0.8 }}>{it.desc}</div>
               </div>
             </Card>
           </Reveal>
@@ -370,9 +371,9 @@ function TechSection() {
   const { isMobile, isTablet } = useBreakpoint();
   const cols = isMobile ? "1fr" : isTablet ? "repeat(3, 1fr)" : "repeat(3, 1fr)";
   const items = [
-    { img: "infrastructure", name: "AI Infrastructure", desc: "Enterprise architecture built for scalability." },
-    { img: "generative", name: "Generative Intelligence", desc: "Models that understand and generate complex legal work." },
-    { img: "adaptive", name: "Adaptive Systems", desc: "Continuously learning AI tailored to your enterprise." },
+    { img: "infrastructure", icon: "server", name: "AI Infrastructure", desc: "Enterprise architecture built for scalability." },
+    { img: "generative", icon: "cpu", name: "Generative Intelligence", desc: "Models that understand and generate complex legal work." },
+    { img: "adaptive", icon: "activity", name: "Adaptive Systems", desc: "Continuously learning AI tailored to your enterprise." },
   ];
   return (
     <section id="technology" style={{ position: "relative", zIndex: 1, padding: isMobile ? "60px 20px" : "80px 40px 70px", maxWidth: MAXW, margin: "0 auto" }}>
@@ -382,9 +383,10 @@ function TechSection() {
           <Reveal key={it.img} delay={i * 100}>
             <Card variant="solid" padding="none" interactive style={{ overflow: "hidden", aspectRatio: isMobile ? "4 / 3" : "390 / 344", position: "relative" }}>
               <img src={`assets/products/${it.img}.png`} alt={it.name} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "48px 20px 20px", background: "linear-gradient(to top, rgba(2,6,12,0.92) 0%, rgba(2,6,12,0.5) 60%, transparent 100%)" }}>
-                <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--text-accent)", marginBottom: 6 }}>{it.name}</div>
-                <div style={{ fontSize: 13, lineHeight: 1.5, color: "var(--text-secondary)" }}>{it.desc}</div>
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(2,6,12,0.88) 0%, rgba(2,6,12,0.3) 50%, rgba(2,6,12,0.15) 100%)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "20px 24px", gap: 14 }}>
+                <div style={{ color: "var(--text-accent)", opacity: 0.85 }}>{Ic(it.icon, { width: 32, height: 32, strokeWidth: 1.4 })}</div>
+                <div style={{ fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 22, letterSpacing: "0.03em", lineHeight: 1.2, color: "var(--text-primary)", textAlign: "center" }}>{it.name}</div>
+                <div style={{ fontSize: 13, lineHeight: 1.55, color: "var(--text-secondary)", textAlign: "center", opacity: 0.8 }}>{it.desc}</div>
               </div>
             </Card>
           </Reveal>
