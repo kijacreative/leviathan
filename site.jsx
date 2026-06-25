@@ -486,10 +486,30 @@ function Footer({ onDemo }) {
 function DemoModal({ open, onClose }) {
   const { isMobile } = useBreakpoint();
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
   const [agree, setAgree] = useState(true);
-  useEffect(() => { if (open) setSent(false); }, [open]);
+  useEffect(() => { if (open) { setSent(false); setSending(false); } }, [open]);
   useEffect(() => { if (window.lucide) lucide.createIcons(); });
   if (!open) return null;
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    setSending(true);
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: fd.get("name"),
+          email: fd.get("email"),
+          product: fd.get("product"),
+        }),
+      });
+    } catch (_) {}
+    setSending(false);
+    setSent(true);
+  }
   return (
     <div onClick={onClose} style={{ position: "fixed", inset: 0, zIndex: 60, display: "flex", alignItems: isMobile ? "flex-end" : "center", justifyContent: "center", background: "var(--surface-overlay)", backdropFilter: "blur(6px)", padding: isMobile ? 0 : 24, animation: "lev-fade var(--dur-base) var(--ease-out)" }}>
       <div onClick={(e) => e.stopPropagation()} style={{ width: isMobile ? "100%" : "min(480px, 100%)", background: "var(--surface-card-solid)", border: "1px solid var(--border-default)", borderRadius: isMobile ? "var(--radius-lg, 12px) var(--radius-lg, 12px) 0 0" : "var(--radius-lg, 12px)", boxShadow: "var(--glow-md), var(--shadow-xl)", padding: isMobile ? "28px 20px 36px" : 32, position: "relative", animation: "lev-rise var(--dur-slow) var(--ease-deep)" }}>
@@ -508,12 +528,12 @@ function DemoModal({ open, onClose }) {
             <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--text-accent)", marginBottom: 8 }}>Private Demo</div>
             <h3 style={{ margin: 0, fontFamily: "var(--font-display)", fontWeight: 500, fontSize: 22, letterSpacing: "0.03em", color: "var(--text-primary)" }}>Request a Private Demo</h3>
             <p style={{ margin: "8px 0 20px", fontSize: 14, lineHeight: 1.55, color: "var(--text-secondary)" }}>Tell us about your operation. We tailor every demo to your enterprise.</p>
-            <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              <Input label="Full name" placeholder="Marina Vance" required />
-              <Input label="Work email" type="email" placeholder="you@firm.com" iconLeft={Ic("mail")} required />
-              <Select label="Product of interest" options={["Leviathan Intake AI", "Leviathan Litigation Engine", "Leviathan Analytics", "Leviathan Vendor Network"]} />
+            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <Input name="name" label="Full name" placeholder="Marina Vance" required />
+              <Input name="email" label="Work email" type="email" placeholder="you@firm.com" iconLeft={Ic("mail")} required />
+              <Select name="product" label="Product of interest" options={["Leviathan Intake AI", "Leviathan Litigation Engine", "Leviathan Analytics", "Leviathan Vendor Network"]} />
               <Checkbox checked={agree} onChange={setAgree} label="I agree to be contacted about Leviathan products." />
-              <div style={{ marginTop: 4 }}><Button type="submit" fullWidth size="lg">Request Demo</Button></div>
+              <div style={{ marginTop: 4 }}><Button type="submit" fullWidth size="lg" disabled={sending}>{sending ? "Sending…" : "Request Demo"}</Button></div>
             </form>
           </React.Fragment>
         )}
